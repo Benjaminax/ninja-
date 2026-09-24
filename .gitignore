@@ -1,16 +1,27 @@
+# Unity generated folders
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
-[Bb]uild/
-[Bb]uilds/
 [Ll]ogs/
 [Uu]ser[Ss]ettings/
+[Bb]uild/
+[Bb]uilds/
 [Mm]emoryCaptures/
 [Rr]ecordings/
+[Aa]sset[Ss]tore[Tt]ools/
+[Aa]ddressables[Tt]mp/
+[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+[Aa]ddressable[Aa]ssets[Dd]ata/*/*.json
+[Aa]ddressable[Aa]ssets[Dd]ata/*/*.hash
+[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bundle
+[Aa]ddressable[Aa]ssets[Dd]ata/*/*.manifest
+[Aa]ddressable[Aa]ssets[Dd]ata/*/*.xml
+[Aa]ddressable[Aa]ssets[Dd]ata/*/*.pdb
 
 # Unity generated project files
 .vs/
 .idea/
+.vscode/*.code-workspace
 *.csproj
 *.sln
 *.slnx
@@ -23,17 +34,27 @@
 *.mdb
 *.opendb
 *.VC.db
-
-# OS/editor files
-.DS_Store
-Thumbs.db
-*.swp
-*.swo
+*.unityproj
+*.pidb.meta
+sysinfo.txt
+crashlytics-build.properties
 
 # Build and packaging artifacts
 *.apk
 *.aab
-*.unitypackage
 *.app
 *.exe
+*.ipa
+*.unitypackage
 *.zip
+*.tar
+*.7z
+
+# IDE, OS, and temporary files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*.tmp
+*.bak

@@ -1,86 +1,85 @@
-# Wayfinder - 2D Pixel Adventure
+# Wayfinder
 
-**Wayfinder** is a 2D Platformer developed to research and implement modern game programming techniques within **Unity 6**. The project focuses on optimizing player experience (**Game Feel**), building a modular **AI System**, and utilizing the advanced **UI Toolkit** workflow.
+Wayfinder is a 2D pixel-art platform adventure built with Unity 6. It combines responsive platforming, action combat, enemy AI, and a data-driven UI in a modular project intended to demonstrate modern Unity development practices.
 
----
+## Game overview
 
-## 1. Technical Overview
-* **Engine:** Unity 6 (6000.3.10f1) - Leveraging the latest performance features.
-* **Render Pipeline:** Universal Render Pipeline (URP) - Optimized 2D Renderer for lighting and post-processing.
-* **Input System:** New Input System (Package) - Event-driven input handling with multi-device support.
-* **Language:** C# (Clean Code architecture).
-* **UI System:** UI Toolkit (UXML & USS) - Modern Web-based styling (Flexbox) for high-performance interfaces.
-* **Source Architecture:**
-    * **OOP (Inheritance):** Base `Enemy.cs` class encapsulates shared logic (Health, Damage, Hit/Death states). Specialized classes like `ChickenAI` and `TurtleAI` extend specific behaviors.
-    * **Singleton Pattern:** Implemented in `GameData` to manage global score and persistent data across levels.
-    * **Observer Pattern:** Utilizing C# Events to decouple game logic from the UI system.
+Explore the forest, navigate hazards, collect items, and defeat enemies while moving through handcrafted platforming encounters. The game emphasizes responsive controls and readable enemy behavior rather than overly complex systems.
 
----
+### Core features
 
-## 2. Technical Implementation
+- Responsive platforming with coyote time, jump buffering, and double-jump support
+- Action combat with projectiles, damage reactions, stomps, and enemy defeat states
+- Multiple enemy archetypes with distinct patrol, chase, hovering, and attack behaviors
+- Pixel-perfect 2D presentation with URP lighting and a Cinemachine camera
+- Modular prefabs for the player, enemies, items, hazards, and UI
+- RuleTile-based terrain authoring for faster level creation
+- Event-driven score and HUD updates using UI Toolkit
+- New Unity Input System support for keyboard and controller input
 
-### 2.1. Advanced Movement (Game Feel)
-* **Coyote Time & Jump Buffer:** Implemented in `PlayerMove.cs` for more forgiving and responsive jumping mechanics.
-    * **Logic:** `coyoteTimeCounter` allows for jumps shortly after leaving a ledge; `jumpBufferCounter` caches jump inputs slightly before grounding.
-    * **Result:** Significantly improved control fluidness and "professional" gameplay feel.
-* **Double Jump Logic:** Integrated `jumpCount` with the **Animator Controller** to trigger unique mid-air states.
+## Technology
 
-### 2.2. AI & Environmental Awareness
-The AI system uses a modular architecture combining **Finite State Machines (FSM)** with physical sensing techniques.
+- **Engine:** Unity 6.0.6.2f1
+- **Rendering:** Universal Render Pipeline with the 2D Renderer
+- **Language:** C#
+- **UI:** UI Toolkit (UXML and USS)
+- **Input:** Unity Input System
+- **Repository:** Unity assets and project settings are versioned; generated caches and local build output are ignored
 
-#### 2.2.1. Core Sensing Mechanics
-* **Asynchronous Simulation:** Randomized initial directions and `stateTimer` offsets in `Start()` ensure enemies don't move in a synchronized, "robotic" pattern.
-* **Raycasting Detection:** Real-time environmental scanning using `Physics2D.Raycast` to detect ledge boundaries and walls for intelligent flipping logic.
-* **Position & Distance Detection:** Dynamic calculation of `xDistance` and `yDistance` relative to the Player to trigger "Chase" or "Attack" states.
-* **Dynamic Hit Detection:** Uses `ContactPoint2D.normal` to determine interaction logic: **Stomp** (Damage to enemy from above) vs. **Hit** (Damage to player from sides).
+## Getting started
 
-#### 2.2.2. Enemy Archetype Design
-1.  **Mushroom (Hybrid AI):** Combines timer-based Idle/Run states with Raycast cliff-detection to prevent accidental falls.
-2.  **BlueBird (Coordinate-Based AI):** Implements **Ping-pong Patrol** logic relative to a `startPosition` within a defined `patrolRange`.
-3.  **Chicken (Reactive AI):** Features **Proximity Detection**; triggers high-speed `isChasing` state while maintaining cliff-safety raycasts.
-4.  **FatBird (Trigger-Based AI):** Uses **`Mathf.Sin`** for hovering patrol and switches `Rigidbody2D` to **Dynamic** for high-velocity vertical attacks when the player is detected below.
-5.  **Turtle (Simple State AI):** Optimized FSM that cycles "Spike/No-Spike" states based on simple timers, maximizing performance for high-density encounters.
+1. Install Unity `6000.6.2f1` through Unity Hub.
+2. Clone this repository.
+3. Open the repository folder in Unity Hub.
+4. Open `Assets/Scenes/Level01_ForestAdventure.unity`.
+5. Press **Play** in the Unity Editor.
 
-### 2.3. UI & Data Management
-* **UI Toolkit Workflow:** Complete separation of C# logic and UXML/USS presentation.
-* **Event-Driven Score System:**
-    * **Observer Pattern:** `static event Action` notifications replace `Update()` polling, saving CPU cycles.
-    * **Unity 6 Features:** Uses **Setter Properties** and the **`[CreateProperty]`** attribute for enhanced data observability.
+Unity will regenerate the ignored `Library`, `Temp`, and project-file folders locally. These folders should not be committed.
 
-### 2.4. Level Design
-* **Intelligent RuleTiles:** Application of **ScriptableObject-based RuleTiles** to automate terrain generation. The system recognizes neighbors to auto-select correct sprites (corners, edges, surfaces), drastically reducing manual design time.
+## Controls
 
----
+The exact bindings are configured through the Unity Input System asset. The default keyboard layout is:
 
-## 3. Optimization & Asset Management
-* **Prefab Architecture:** Modularized Player, Enemy, and Item prefabs for centralized updates and reusability.
-* **Pixel Art Consistency:** Configuration of **Point Filter** and **No Compression** for all sprites. Integrated **Pixel Perfect Camera** to eliminate pixel jitter during movement.
-* **Git Flow Pipeline:**
-    1.  **Initialize:** .gitignore and folder structure.
-    2.  **Env Setup:** URP, Layers, and Tags.
-    3.  **Core Gameplay:** Input System & Player Controller.
-    4.  **AI System:** Base classes and specific archetypes.
-    5.  **UI/Data:** Event-driven binding.
-    6.  **Tooling:** RuleTiles implementation.
-    7.  **Final Polish:** Performance tuning and documentation.
+| Action | Default input |
+| --- | --- |
+| Move | A / D or Left / Right Arrow |
+| Jump | Space |
+| Attack | Configured in the Input Actions asset |
+| Pause | Escape |
 
----
+Controller bindings can be configured in the Input Actions asset without changing gameplay scripts.
 
-## 4. Art & Animation Pipeline
+## Project structure
 
-### 4.1. AI-Assisted Workflow
-Combining **Generative AI** with manual **Aseprite** refinement to optimize solo production speed.
-* **AI Generation:** Used **Pixellab.ai** (Aseprite Plugin) for rapid frame drafting, reducing concept time by ~70%.
-* **Manual Polish:** Hand-cleaned pixels and color palette standardization. All assets exported as Sprite Sheets at **32x32 PPU**.
+```text
+Assets/
+├── Scenes/              Main playable scenes
+├── Scripts/Actors/      Player and enemy gameplay
+├── Scripts/UI/          HUD and persistent game data
+├── Prefabs/             Reusable gameplay objects
+├── Animations/          Animator controllers and clips
+├── Sprites/             Sprites, tiles, and visual effects
+└── Settings/            URP, input, and project settings
+Packages/                Unity package dependencies
+ProjectSettings/         Unity editor and player configuration
+```
 
-### 4.2. Asset Attribution
-* **Custom Assets:** Mushroom (Trampoline), Mana Dash (JumpSkill), Energy Blast, and Ultimate Burst were custom-designed for this project.
-* **Third-party Assets:** Environmental tiles and basic enemies integrated from **Pixel Adventure 1 & 2 (itch.io)** to focus resources on specialized mechanics.
+## Release notes
 
----
+### Unreleased
 
-## 5. Contact & Portfolio
-* **Developer:** Nguyen Huu Sang
-* **Role:** Unity Developer Intern
-* **Email:** 24huusang6a2@gmail.com
-* **Project Status:** Core features and AI systems completed.
+- Initial public repository setup
+- Unity 6 project configuration and package manifest
+- Forest adventure level with platforming and combat foundations
+- Responsive player movement with coyote time, jump buffering, and double jump
+- Modular enemy AI for Mushroom, BlueBird, Chicken, FatBird, Turtle, and zombie variants
+- Event-driven score and HUD systems
+- Pixel-art rendering setup, prefabs, animations, and RuleTile terrain workflow
+
+## Asset attribution
+
+Some environmental tiles and basic enemy assets are adapted from Pixel Adventure 1 and Pixel Adventure 2 assets available through itch.io. Custom project work includes the Mushroom trampoline, Mana Dash jump skill, Energy Blast, and Ultimate Burst.
+
+## Development
+
+This project was developed by Nguyen Huu Sang as a Unity developer portfolio and internship project. Contributions and focused improvements are welcome.
