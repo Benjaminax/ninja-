@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Wayfinder
+  productName: The Paradox
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -612,14 +612,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Wayfinder
+  metroPackageName: The Paradox
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Wayfinder
+  metroApplicationDescription: The Paradox
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -699,7 +699,7 @@ PlayerSettings:
   cloudProjectId: 5bd8b48c-8faa-4c5e-9e34-b21c1b68c265
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Wayfinder
+  projectName: The Paradox
   organizationId: unity_24huusang6a2
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

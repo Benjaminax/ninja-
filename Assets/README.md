@@ -1,6 +1,6 @@
-# Wayfinder - 2D Pixel Adventure | Technical Portfolio
+# The Paradox - 2D Pixel Adventure | Technical Portfolio
 
-**Wayfinder** là một dự án game 2D Platformer được phát triển nhằm mục đích nghiên cứu và áp dụng các kỹ thuật lập trình Game hiện đại trong Unity. Dự án tập trung vào việc tối ưu hóa trải nghiệm người dùng (Game Feel), xây dựng hệ thống AI linh hoạt và ứng dụng workflow UI Toolkit tiên tiến.
+**The Paradox** là một dự án game 2D Platformer được phát triển nhằm mục đích nghiên cứu và áp dụng các kỹ thuật lập trình Game hiện đại trong Unity. Dự án tập trung vào việc tối ưu hóa trải nghiệm người dùng (Game Feel), xây dựng hệ thống AI linh hoạt và ứng dụng workflow UI Toolkit tiên tiến.
 
 ---
 
@@ -25,7 +25,7 @@
 
 ### 2.2. Hệ thống AI & Nhận thức môi trường
 
-Hệ thống trí tuệ nhân tạo (AI) của kẻ thù trong **Wayfinder** được xây dựng theo kiến trúc hướng module, kết hợp linh hoạt giữa máy trạng thái (State Machine) và các kỹ thuật nhận thức vật lý để tối ưu hiệu suất đồng thời tạo ra các phản xạ tự nhiên, sinh động.
+Hệ thống trí tuệ nhân tạo (AI) của kẻ thù trong **The Paradox** được xây dựng theo kiến trúc hướng module, kết hợp linh hoạt giữa máy trạng thái (State Machine) và các kỹ thuật nhận thức vật lý để tối ưu hiệu suất đồng thời tạo ra các phản xạ tự nhiên, sinh động.
 
 #### a. Các cơ chế nhận thức cốt lõi (Core Mechanics)
 * **Raycasting Detection:** Sử dụng `Physics2D.Raycast` để quét môi trường theo thời gian thực. AI bắn các tia xuống dưới (kiểm tra vực thẳm) và phía trước (kiểm tra tường), giúp chúng tự động quay đầu (`Flip`) hoặc dừng lại thay vì di chuyển vô hồn.

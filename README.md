@@ -1,6 +1,6 @@
-# Wayfinder
+# The Paradox
 
-Wayfinder is a 2D pixel-art platform adventure built with Unity 6. It combines responsive platforming, action combat, enemy AI, and a data-driven UI in a modular project intended to demonstrate modern Unity development practices.
+The Paradox is a 2D pixel-art platform adventure built with Unity 6. It combines responsive platforming, action combat, enemy AI, and a data-driven UI in a modular project intended to demonstrate modern Unity development practices.
 
 ## Game overview
 

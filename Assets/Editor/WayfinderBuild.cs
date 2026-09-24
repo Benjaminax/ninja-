@@ -15,7 +15,7 @@ public static class WayfinderBuild
         BuildPlayerOptions options = new BuildPlayerOptions
         {
             scenes = new[] { "Assets/Scenes/Level01_ForestAdventure.unity" },
-            locationPathName = Path.Combine(outputDirectory, "Wayfinder.exe"),
+            locationPathName = Path.Combine(outputDirectory, "The Paradox.exe"),
             target = BuildTarget.StandaloneWindows64,
             options = BuildOptions.None
         };
@@ -24,6 +24,6 @@ public static class WayfinderBuild
         if (report.summary.result != BuildResult.Succeeded)
             throw new BuildFailedException($"Windows build failed: {report.summary.result}");
 
-        Debug.Log($"Wayfinder Windows build created at {options.locationPathName}");
+        Debug.Log($"The Paradox Windows build created at {options.locationPathName}");
     }
 }
