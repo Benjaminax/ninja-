@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Fruit
+  - Ground
+  - Enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - Background
+  - Player
+  - Plants
+  - Items
+  - Enermies
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 939559675
+    locked: 0
+  - name: Bridge
+    uniqueID: 1321603065
+    locked: 0
+  - name: Platforms
+    uniqueID: 441170155
+    locked: 0
+  - name: Plants
+    uniqueID: 2205990255
+    locked: 0
+  - name: Items
+    uniqueID: 2334513471
+    locked: 0
+  - name: Enermies
+    uniqueID: 2480992413
+    locked: 0
+  - name: Player
+    uniqueID: 302261755
+    locked: 0
+  m_RenderingLayers:
+  - Default

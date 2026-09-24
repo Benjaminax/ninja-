@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1000000000000000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4000000000000000}
+  - component: {fileID: 2120000000000000}
+  - component: {fileID: 5000000000000000}
+  - component: {fileID: 6100000000000000}
+  - component: {fileID: 1140000000000000}
+  m_Layer: 0
+  m_Name: Fireball
+  m_TagString: Untagged
+  m_IsActive: 1
+--- !u!4 &4000000000000000
+Transform:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 1000000000000000}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!212 &2120000000000000
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 1000000000000000}
+  m_Enabled: 1
+  m_RenderingLayerMask: 1
+  m_SortingLayerID: 302261755
+  m_SortingLayer: 6
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: c8307a4528f7acd4f8fd04dad4794113, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!50 &5000000000000000
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 1000000000000000}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_GravityScale: 0
+  m_CollisionDetection: 1
+  m_Interpolate: 1
+  m_Constraints: 4
+--- !u!61 &6100000000000000
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 1000000000000000}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_IsTrigger: 1
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.24, y: 0.24}
+  m_EdgeRadius: 0
+--- !u!114 &1140000000000000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 1000000000000000}
+  m_Enabled: 1
+  m_Script: {fileID: 11500000, guid: 4cf2b71e3a5d4f8c9b0d1e2f3a4b5c62, type: 3}
+  speed: 4
+  damage: 1
+  lifetime: 3
+  animationFrames:
+  - {fileID: 21300000, guid: c8307a4528f7acd4f8fd04dad4794113, type: 3}
+  - {fileID: 21300000, guid: 4c7f18f1274f4084d98959dd8fa5b0f5, type: 3}
+  - {fileID: 21300000, guid: e12def1f392e15740bf167c1e2512f53, type: 3}
+  - {fileID: 21300000, guid: 05270ae50883518448c456db9c8d82b8, type: 3}
+  animationRate: 12

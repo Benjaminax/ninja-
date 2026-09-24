@@ -1,0 +1,32 @@
+/* Container chính bao phủ toàn màn hình */
+.hud-root {
+    flex-grow: 1;
+}
+
+/* Khung chứa điểm số nằm ở góc trên bên phải */
+.score-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4); /* Nền đen mờ 40% */
+    padding: 10px 15px;
+    border-radius: 15px;
+}
+
+/* Icon giỏ trái cây - Sử dụng đường dẫn chính xác */
+.score-icon {
+    width: 80px;
+    height: 80px;
+    background-image: url("project://database/Assets/Gem%20Pack%20Complete/256%20Full%20content/Pack-Elements.png?fileID=-1019538246&guid=0b25e4de70df31a47a671796af4331e9&type=3#Pack-Elements_0");
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+/* Chữ hiển thị điểm số */
+.score-text {
+    font-size: 50px;
+    color: white;
+    margin-left: 10px;
+    -unity-font-style: bold;
+}
